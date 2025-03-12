@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aptus Industries</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="logo">
+        <img
+          src="Images/resized_image.png"
+          alt="Aptus Industries Logo"
+          href="/index.html"
+        />
+      </div>
+      <div class="contact-info">
+        <div class="contact-item">
+          <img src="Images/1.png" alt="Call Icon" class="contact-icon" />
+          <span>Call Us</span>
+          <a href="tel:+918485824575">+91 8485824575</a>
+        </div>
+        <div class="contact-item">
+          <img src="Images/2.png" alt="Email Icon" class="contact-icon" />
+          <span>Send Us E-Mail</span>
+          <a href="mailto:sales@aptsindustries.com">sales@aptsindustries.com</a>
+        </div>
+        <div class="contact-item">
+          <img src="Images/3.png" alt="Location Icon" class="contact-icon" />
+          <span>Our Location</span>
+          <a href="https://g.co/kgs/gKoBSLw">Nagpur, India</a>
+        </div>
+      </div>
+    </div>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <section id="home" class="hero">
+      <video id="hero-video" muted loop>
+        <source
+          src="Hailee Steinfeld, Alesso - Let Me Go (Personal Collection) ft. Florida Georgia Line, WATT.mp4"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <div class="play-button" id="video-toggle"></div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About Aptus Industries</h2>
+      <div class="section-content about-container">
+        <div class="about-text">
+          <p>
+            Aptus proudly supplies a superior range of rice varieties, carefully
+            sourced and processed to ensure the highest levels of purity, taste,
+            and nutrition. Our diverse portfolio includes premium basmati and
+            non-basmati rice, organic and specialty rice, parboiled and raw
+            rice, and customized packaging solutions. These products are crafted
+            to deliver exceptional quality, cost-effectiveness, and reliability,
+            catering to a wide array of consumer and industrial needs. With a
+            strong focus on customer satisfaction and a commitment to
+            excellence, we bring forward solutions that empower businesses and
+            households to enjoy nutritious and flavorful rice.
+          </p>
+
+          <div class="vision-mission">
+            <h3>Vision & Mission</h3>
+            <p>
+              Aptus proudly supplies a superior range of rice varieties,
+              carefully sourced and processed to ensure the highest levels of
+              purity, taste, and nutrition. Our diverse portfolio includes
+              premium basmati and non-basmati rice, organic and specialty rice,
+              parboiled and raw rice, and customized packaging solutions.
+            </p>
+          </div>
+        </div>
+        <div class="about-image">
+          <img src="Images/5.png" alt="Rice Varieties" />
+        </div>
+      </div>
+    </section>
+
+    <section id="certifications" class="section">
+      <h2>Certification & Memberships</h2>
+      <div class="section-content certification-content">
+        <div class="certification-logos">
+          <img src="Images\Apeda.png" alt="APEDA Certification" />
+          <img src="Images\Fssai.png" alt="FSSAI Certification" />
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-icon">
+              <img src="Images/Best_quality.png" alt="Quality Icon" />
+            </div>
+            <div class="stat-text">Quality</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <img src="Images/Happy_client.png" alt="Happy Clients Icon" />
+            </div>
+            <div class="stat-text">Happy Clients</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <img src="Images/Packaging.png" alt="Packaging Icon" />
+            </div>
+            <div class="stat-text">Packaging</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-icon">
+              <img src="Images/Sales_monthly.png" alt="Capacity Icon" />
+            </div>
+            <div class="stat-text">1000 MT Monthly</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products" class="section">
+      <h2>Products</h2>
+      <div class="products-container">
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-header">Indian Parboiled Rice (PR)</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/FFE5B4/fff?text=Parboiled+Rice"
+                alt="Indian Parboiled Rice"
+              />
+            </div>
+            <div class="product-details">
+              <p>Long Grain Parboiled Rice (PR: 64 & IR-36)</p>
+              <p>Medium Grain Parboiled Rice (PR: 6)</p>
+              <p class="packaging-info">Pkg: 25kg PP/100kg PP</p>
+              <a href="brochure/parboiled_rice.pdf" class="download-btn"
+                >Download Brochure</a
+              >
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-header">Indian Sona Masoori Steam Rice</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/FFF8DC/fff?text=Sona+Masoori"
+                alt="Indian Sona Masoori Steam Rice"
+              />
+            </div>
+            <div class="product-details">
+              <p>Pupal Steam Rice</p>
+              <p>BPT Steam Rice</p>
+              <p class="packaging-info">Pkg: 25kg PP/100kg PP</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-header">Indian Round White Rice (Swarna)</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/FFFFFF/ccc?text=White+Rice"
+                alt="Indian Round White Rice"
+              />
+            </div>
+            <div class="product-details">
+              <p>Medium Grain White (Raw)</p>
+              <p>&nbsp;</p>
+              <p class="packaging-info">Pkg: 25kg PP/100kg PP</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-header">Indian 100% Broken Rice</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/FFE5B4/fff?text=Broken+Rice"
+                alt="Indian 100% Broken Rice"
+              />
+            </div>
+            <div class="product-details">
+              <p>Long Grain Parboiled Rice (PR: 64 & IR-36)</p>
+              <p>Medium Grain Parboiled Rice (PR: 6)</p>
+              <p class="packaging-info">Pkg: 25kg PP/100kg PP</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-header">Indian Basmati Rice</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/FFF8DC/fff?text=Basmati+Rice"
+                alt="Indian Basmati Rice"
+              />
+            </div>
+            <div class="product-details">
+              <p>1121 Raw/Sella/Steam/ Golden Rice</p>
+              <p>DB Raw/Sella/Steam/ Golden Rice</p>
+              <p>1509 Raw/Sella/Steam/ Golden Rice</p>
+            </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-header">More</div>
+            <div class="product-image">
+              <img
+                src="https://placehold.co/200x150/90EE90/fff?text=Rice+Fields"
+                alt="Rice Fields"
+              />
+            </div>
+            <div class="product-details more-section">
+              <p>&nbsp;</p>
+              <a href="#" class="download-btn">Download Brochure</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="private-label">
+          <div class="private-label-title">PRIVATE LABEL MANUFACTURING</div>
+
+          <div class="packaging-options">
+            <div class="packaging-option">
+              <img
+                src="https://placehold.co/80x80/f44336/fff?text=Pouch"
+                alt="Plastic Pouch"
+              />
+              <p>PLASTIC POUCH</p>
+            </div>
+
+            <div class="packaging-option">
+              <img
+                src="https://placehold.co/80x80/f44336/fff?text=BOPP"
+                alt="BOPP Bag"
+              />
+              <p>BOPP BAG</p>
+            </div>
+
+            <div class="packaging-option">
+              <img
+                src="https://placehold.co/80x80/f44336/fff?text=Non-Woven"
+                alt="Non-Woven Bag"
+              />
+              <p>NON WOVEN</p>
+            </div>
+
+            <div class="packaging-option">
+              <img
+                src="https://placehold.co/80x80/f44336/fff?text=Jute"
+                alt="Jute Bag"
+              />
+              <p>JUTE BAG</p>
+            </div>
+
+            <div class="packaging-option">
+              <img
+                src="https://placehold.co/80x80/f44336/fff?text=Jar"
+                alt="Plastic Jar"
+              />
+              <p>PLASTIC JAR</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="form-box">
+          <div class="form-fields">
+            <form id="contactForm">
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="first_name"
+                  placeholder="First Name*"
+                  required
+                  class="half-width"
+                />
+                <input
+                  type="text"
+                  name="last_name"
+                  placeholder="Last Name*"
+                  required
+                  class="half-width"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email*"
+                  required
+                  class="half-width"
+                />
+                <input
+                  type="text"
+                  name="phone"
+                  placeholder="Phone*"
+                  required
+                  class="half-width"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  name="company"
+                  placeholder="Company Name"
+                  class="half-width"
+                />
+                <input
+                  type="text"
+                  name="job_title"
+                  placeholder="Job Title"
+                  class="half-width"
+                />
+              </div>
+              <div class="form-group full-width">
+                <input type="text" name="subject" placeholder="Subject" />
+              </div>
+              <button type="submit" class="submit-btn">SUBMIT</button>
+            </form>
+          </div>
+          <img src="Images/13.png" class="mailbox" alt="Mailbox" />
+        </div>
+      </div>
+    </section>
+    <div class="footer">
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p>Shanti Prakash Complex</p>
+          <p>Telephone Ex. Sq, CA Road</p>
+          <p>Nagpur, India - 440008</p>
+          <p>sales@aptsindustries.com</p>
+          <p>+91 8485824575</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <a href="#">About Us</a>
+          <a href="#">Products</a>
+          <a href="#">Certifications</a>
+          <a href="#">Download Brochure</a>
+        </div>
+        <div class="footer-column">
+          <h3>Follow Us On</h3>
+          <div class="social-icons">
+            <a href="#"><img src="linkedin.png" alt="LinkedIn" />LinkedIn</a>
+            <a href="#"><img src="facebook.png" alt="Facebook" />Facebook</a>
+            <a href="#"><img src="twitter.png" alt="Twitter" />Twitter</a>
+            <a href="#"><img src="whatsapp.png" alt="WhatsApp" />WhatsApp</a>
+          </div>
+        </div>
+      </div>
+      <div class="copyright">&copy; 2025 by Aptus Industries</div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $('#contactForm').on('submit', function (event) {
+          event.preventDefault();
+          $.ajax({
+            url: '/submit',
+            type: 'POST',
+            data: $(this).serialize(),
+            success: function (response) {
+              alert('Form submitted successfully!');
+            },
+            error: function () {
+              alert('Error submitting form.');
+            },
+          });
+        });
+      });
+    </script>
+    <script src="script.js" async></script>
+  </body>
+</html>
