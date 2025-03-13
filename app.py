@@ -5,19 +5,15 @@ import os
 
 app = Flask(__name__)
 
-# Google Sheets API setup
 SCOPE = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
-CREDENTIALS_FILE = 'credentials.json'  # You'll need to create this file
+CREDENTIALS_FILE = 'credentials.json'  
 
-# Initialize Google Sheets connection
 def get_google_sheet():
     credentials = ServiceAccountCredentials.from_json_keyfile_name(CREDENTIALS_FILE, SCOPE)
     client = gspread.authorize(credentials)
-    
-    # Open the spreadsheet - replace with your spreadsheet name
+     
     spreadsheet = client.open('Aptus Industries Form Responses')
     
-    # Get the first worksheet
     worksheet = spreadsheet.get_worksheet(0)
     
     return worksheet
@@ -25,7 +21,6 @@ def get_google_sheet():
 @app.route('/submit', methods=['POST'])
 def submit_form():
     try:
-        # Get form data
         form_data = [
             request.form.get("first_name"),
             request.form.get("last_name"),
@@ -36,19 +31,15 @@ def submit_form():
             request.form.get("subject")
         ]
         
-        # Get the Google Sheet
         worksheet = get_google_sheet()
         
-        # Check if headers exist, if not add them
         if not worksheet.row_values(1):
             headers = ["First Name", "Last Name", "Email", "Phone", "Company", "Job Title", "Subject", "Timestamp"]
             worksheet.append_row(headers)
         
-        # Add timestamp to the data
         from datetime import datetime
         form_data.append(datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
         
-        # Append the data to the sheet
         worksheet.append_row(form_data)
         
         return jsonify({"message": "Form submitted successfully!"}), 200

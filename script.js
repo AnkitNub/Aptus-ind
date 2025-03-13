@@ -1,20 +1,4 @@
 $(document).ready(function () {
-  // Handle smooth scrolling for navigation links
-  document.querySelectorAll('.nav-links a').forEach((anchor) => {
-    anchor.addEventListener('click', function (e) {
-      e.preventDefault();
-
-      const targetId = this.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-
-      window.scrollTo({
-        top: targetElement.offsetTop,
-        behavior: 'smooth',
-      });
-    });
-  });
-
-  // Video handling
   const video = document.getElementById('hero-video');
   const playButton = document.getElementById('video-toggle');
   let isPlaying = false;
@@ -47,11 +31,9 @@ $(document).ready(function () {
     playButton.classList.remove('playing');
   });
 
-  // Form submission with loading indicator
   $('#contactForm').on('submit', function (event) {
     event.preventDefault();
 
-    // Change button text to indicate loading
     const submitBtn = $(this).find('.submit-btn');
     const originalText = submitBtn.text();
     submitBtn.text('Submitting...');
@@ -62,25 +44,85 @@ $(document).ready(function () {
       type: 'POST',
       data: $(this).serialize(),
       success: function (response) {
-        // Reset form
         $('#contactForm')[0].reset();
 
-        // Show success message
         alert('Thank you! Your information has been submitted successfully.');
 
-        // Reset button
         submitBtn.text(originalText);
         submitBtn.prop('disabled', false);
       },
       error: function (xhr, status, error) {
-        // Show error message
         alert('Error submitting form. Please try again later.');
         console.error('Error details:', xhr.responseText);
-
-        // Reset button
         submitBtn.text(originalText);
         submitBtn.prop('disabled', false);
       },
     });
   });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.nav-links a').forEach((anchor) => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const targetId = this.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const offset = navbarHeight + 10;
+
+      window.scrollTo({
+        top: targetElement.offsetTop - offset,
+        behavior: 'smooth',
+      });
+
+      document.querySelectorAll('.nav-links a').forEach((link) => {
+        link.classList.remove('active');
+      });
+      this.classList.add('active');
+    });
+  });
+
+  const sections = document.querySelectorAll('.section');
+
+  sections.forEach((section) => {
+    section.classList.add('section-hidden');
+  });
+
+  const sectionObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('section-visible');
+
+          const id = entry.target.getAttribute('id');
+          if (id) {
+            document.querySelectorAll('.nav-links a').forEach((link) => {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        }
+      });
+    },
+    {
+      root: null,
+      threshold: 0.15,
+      rootMargin: '-100px 0px',
+    }
+  );
+
+  sections.forEach((section) => {
+    sectionObserver.observe(section);
+  });
+});
+
+window.addEventListener('scroll', function () {
+  const scrollTop = window.scrollY;
+  const docHeight = document.body.offsetHeight - window.innerHeight;
+  const scrollPercent = (scrollTop / docHeight) * 100;
+  document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
 });

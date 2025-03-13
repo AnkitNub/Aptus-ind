@@ -211,7 +211,7 @@
 
 .certification-logos {
   display: flex;
-  justify-content: center;
+  justify-content: center !important;
   gap: 50px;
   margin: 30px 0;
 }
@@ -489,3 +489,93 @@
   margin-top: 20px;
   font-size: 14px;
 }
+
+/* snooth transition */
+ html {
+  scroll-behavior: smooth;
+}
+
+.nav-links a.active {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.section {
+  transition: transform 0.8s ease, opacity 0.8s ease;
+}
+
+.section-hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section h2::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: 0;
+  left: 50%;
+  background-color: #4a7c39;
+  transition: all 0.5s ease;
+}
+
+.section-visible h2::after {
+  width: 80%;
+  left: 10%;
+}
+
+.product-card,
+.packaging-option,
+.download-btn,
+.nav-links a {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.packaging-option:hover {
+  transform: scale(1.05);
+}
+
+.download-btn:hover {
+  background-color: #e8e8e8;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.form-group input,
+.submit-btn {
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  border-color: #4a7c39;
+  box-shadow: 0 0 5px rgba(74, 124, 57, 0.3);
+  outline: none;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(to right, #8dd35f, #0c8a38);
+  z-index: 9999;
+  transition: width 0.3s ease;
+} 
