@@ -145,9 +145,11 @@
               <p>Long Grain Parboiled Rice (PR: 64 & IR-36)</p>
               <p>Medium Grain Parboiled Rice (PR: 6)</p>
               <p class="packaging-info">Pkg: 25kg PP/100kg PP</p>
-              <a href="brochure/parboiled_rice.pdf" class="download-btn"
-                >Download Brochure</a
-              >
+              <div class="download-container">
+                <a href="brochure/parboiled_rice.pdf" class="download-btn"
+                  >Download Brochure</a
+                >
+              </div>
             </div>
           </div>
 
@@ -367,25 +369,6 @@
       </div>
       <div class="copyright">&copy; 2025 by Aptus Industries</div>
     </div>
-
-    <script>
-      $(document).ready(function () {
-        $('#contactForm').on('submit', function (event) {
-          event.preventDefault();
-          $.ajax({
-            url: '/submit',
-            type: 'POST',
-            data: $(this).serialize(),
-            success: function (response) {
-              alert('Form submitted successfully!');
-            },
-            error: function () {
-              alert('Error submitting form.');
-            },
-          });
-        });
-      });
-    </script>
     <script src="script.js" async></script>
   </body>
 </html>
