@@ -23,20 +23,37 @@
   height: 70px;
   width: 100px;
 }
-
 .contact-info {
   display: flex;
-  gap: 40px;
+  gap: 40px; 
+  margin-left: 40px; 
 }
 
 .contact-item {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 5px; 
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.contact-icon {
+  margin-bottom: 10px; 
 }
 
 .contact-item img {
   height: 30px;
+  width: auto;
+  margin-bottom: 10px;
+}
+
+.contact-item img {
+  height: 25px;
   width: auto;
 }
 
@@ -161,8 +178,7 @@
   font-size: 32px;
 }
 
-/* Keep Certifications heading centered */
- #certifications h2 {
+#certifications h2 {
   text-align: center;
 }
 
@@ -182,18 +198,6 @@
   flex: 1;
   min-width: 300px;
 }
-
-/* .about-image {
-  flex: 1;
-  min-width: 200px;
-  display: flex;
-  justify-content: center;
-}
-
-.about-image img {
-  max-width: 50%;
-  height: auto;
-} */
 
 .vision-mission {
   margin-top: 40px;
@@ -459,7 +463,7 @@
   max-width: 1200px;
   margin: auto;
   flex-wrap: wrap;
-  gap: 40px; /* Increased gap for better spacing */
+  gap: 40px; 
   padding: 0 20px;
 }
 
@@ -478,13 +482,13 @@
   color: white;
   text-decoration: none;
   display: block;
-  margin: 10px 0; /* Adjusted margin for better spacing */
+  margin: 10px 0;
 }
 
 .social-icons {
   display: flex;
   flex-direction: column;
-  gap: 10px; /* Increased gap for better spacing */
+  gap: 10px; 
 }
 
 .social-icons img {
@@ -634,19 +638,18 @@ html {
   margin-bottom: 5px;
 }
 
-/* Responsive Styles */
 .about-image {
-  flex: 0.5; /* Reduced from 1 to make it smaller */
+  flex: 0.5; 
   min-width: 200px;
   display: flex;
-  justify-content: flex-end; /* Align to right side */
-  align-items: flex-start; /* Align items to the top */
-  margin-top: -60px; /* Pull it up to reduce gap with heading */
+  justify-content: flex-end; 
+  align-items: flex-start; 
+  margin-top: -60px; 
   padding-top: 0;
 }
 
 .about-image img {
-  max-width: 100%; /* Made smaller */
+  max-width: 100%; 
   height: auto;
   object-fit: contain;
 }
@@ -654,18 +657,16 @@ html {
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start; /* Changed from center to flex-start */
+  align-items: flex-start; 
   gap: 40px;
-  margin-top: -20px; /* Reduce gap between heading and content */
+  margin-top: -20px; 
 }
 
 .about-text {
-  flex: 1.5; /* Increased ratio compared to image */
+  flex: 1.5; 
   min-width: 300px;
 }
 
-
-/* Updated Contact Form Styles */
 #contact .form-box {
   background: #ffffff;
   padding: 30px;
@@ -702,7 +703,6 @@ html {
   color: #666;
 }
 
-/* Style for the submit button */
 #contact .submit-btn {
   background: #00a651;
   color: white;
@@ -714,34 +714,31 @@ html {
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-weight: bold;
-  width: auto; /* Make button width auto instead of 100% */
+  width: auto;
   margin-top: 15px;
-  align-self: flex-start; /* Align to the left */
+  align-self: flex-start;
 }
 
 #contact .submit-btn:hover {
   background: #008a42;
 }
 
-/* For the mailbox image */
+
 #contact .mailbox {
   width: 140px;
   height: auto;
 }
 
-/* Make the form fields have proper spacing */
 #contact .form-fields {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-/* Adjust the placeholder styling */
 #contact input::placeholder {
   color: #888;
 }
 
-/* Add active state for fields */
 #contact input:focus {
   border-bottom: 2px solid #00a651;
 }
