@@ -26,7 +26,7 @@
 
 .contact-info {
   display: flex;
-  gap: 30px;
+  gap: 40px;
 }
 
 .contact-item {
@@ -56,7 +56,7 @@
 }
 
 .navbar {
-  background-color: #4a7c39;
+  background-color: #00a651;
   padding: 15px 0;
 }
 
@@ -157,7 +157,7 @@
 .section h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #4a7c39;
+  color: #00a651;
   font-size: 32px;
 }
 
@@ -195,7 +195,7 @@
 }
 
 .vision-mission h3 {
-  color: #4a7c39;
+  color: #00a651;
   margin-bottom: 15px;
   font-size: 24px;
 }
@@ -212,8 +212,8 @@
 }
 
 .certification-logos img {
-  height: 80px;
-  width: auto;
+  height: 200px;
+  width: 200px;
 }
 
 .stats-container {
@@ -253,10 +253,10 @@
 }
 
 .section:nth-child(odd) {
-  background-color: #f5f5f5;
+  background-color: #ffffff;
 }
 .products-container {
-  background-color: #e0e0e0;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 5px;
   margin-bottom: 30px;
@@ -392,7 +392,7 @@
   padding: 20px;
 }
 .form-box {
-  background: #e5e5e5;
+  background: #ffffff;
   padding: 30px;
   border-radius: 8px;
   display: flex;
@@ -439,40 +439,49 @@
   width: 140px;
 }
 
-
 .footer {
-  background: linear-gradient(to right, #8dd35f, #0c8a38);
+  background-color: #00a651;
   color: white;
   padding: 20px 0;
   text-align: center;
   margin-top: 40px;
 }
+
 .footer-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-start;
-  max-width: 80%;
+  max-width: 1200px;
   margin: auto;
+  flex-wrap: wrap;
+  gap: 40px; /* Increased gap for better spacing */
+  padding: 0 20px;
 }
+
 .footer-column {
   flex: 1;
   text-align: left;
+  padding:10px;
 }
+
 .footer-column h3 {
   margin-bottom: 20px;
 }
+
 .footer-column p,
 .footer-column a {
   color: white;
   text-decoration: none;
   display: block;
-  margin: 15px 0;
+  margin: 10px 0; /* Adjusted margin for better spacing */
 }
+
 .social-icons {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px; /* Increased gap for better spacing */
 }
+
 .social-icons img {
   width: 20px;
   vertical-align: middle;
@@ -482,7 +491,6 @@
   margin-top: 20px;
   font-size: 14px;
 }
-
 
 html {
   scroll-behavior: smooth;
