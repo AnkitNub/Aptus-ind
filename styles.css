@@ -157,13 +157,12 @@
 .section h2 {
   text-align: left;
   margin-bottom: 30px;
-  margin-left: 40px;
   color: #00a651;
   font-size: 32px;
 }
 
-/* Keep Certifications heading centered */v
-#certifications h2 {
+/* Keep Certifications heading centered */
+ #certifications h2 {
   text-align: center;
 }
 
@@ -184,7 +183,7 @@
   min-width: 300px;
 }
 
-.about-image {
+/* .about-image {
   flex: 1;
   min-width: 200px;
   display: flex;
@@ -194,7 +193,7 @@
 .about-image img {
   max-width: 50%;
   height: auto;
-}
+} */
 
 .vision-mission {
   margin-top: 40px;
@@ -633,4 +632,116 @@ html {
   padding-top: 5px;
   margin-top: auto;
   margin-bottom: 5px;
+}
+
+/* Responsive Styles */
+.about-image {
+  flex: 0.5; /* Reduced from 1 to make it smaller */
+  min-width: 200px;
+  display: flex;
+  justify-content: flex-end; /* Align to right side */
+  align-items: flex-start; /* Align items to the top */
+  margin-top: -60px; /* Pull it up to reduce gap with heading */
+  padding-top: 0;
+}
+
+.about-image img {
+  max-width: 100%; /* Made smaller */
+  height: auto;
+  object-fit: contain;
+}
+
+.about-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start; /* Changed from center to flex-start */
+  gap: 40px;
+  margin-top: -20px; /* Reduce gap between heading and content */
+}
+
+.about-text {
+  flex: 1.5; /* Increased ratio compared to image */
+  min-width: 300px;
+}
+
+
+/* Updated Contact Form Styles */
+#contact .form-box {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+#contact .form-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+#contact .form-group input {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  background: transparent;
+  outline: none;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+#contact .form-group input:focus {
+  border-color: #00a651;
+}
+
+#contact .form-group input::placeholder {
+  color: #666;
+}
+
+/* Style for the submit button */
+#contact .submit-btn {
+  background: #00a651;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  width: auto; /* Make button width auto instead of 100% */
+  margin-top: 15px;
+  align-self: flex-start; /* Align to the left */
+}
+
+#contact .submit-btn:hover {
+  background: #008a42;
+}
+
+/* For the mailbox image */
+#contact .mailbox {
+  width: 140px;
+  height: auto;
+}
+
+/* Make the form fields have proper spacing */
+#contact .form-fields {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Adjust the placeholder styling */
+#contact input::placeholder {
+  color: #888;
+}
+
+/* Add active state for fields */
+#contact input:focus {
+  border-bottom: 2px solid #00a651;
 }

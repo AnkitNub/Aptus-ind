@@ -126,3 +126,26 @@ window.addEventListener('scroll', function () {
   const scrollPercent = (scrollTop / docHeight) * 100;
   document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
 });
+
+// Add this to your script.js file
+document.addEventListener('DOMContentLoaded', function () {
+  // Get all form inputs
+  const formInputs = document.querySelectorAll('#contactForm input');
+
+  // Add focus and blur event listeners to each input
+  formInputs.forEach((input) => {
+    // When input gets focus
+    input.addEventListener('focus', function () {
+      this.style.borderBottom = '2px solid #00a651';
+    });
+
+    // When input loses focus
+    input.addEventListener('blur', function () {
+      if (this.value === '') {
+        this.style.borderBottom = '1px solid #ccc';
+      } else {
+        this.style.borderBottom = '2px solid #00a651';
+      }
+    });
+  });
+});
