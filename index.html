@@ -4,14 +4,24 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Aptus Industries</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="Images\Aptusfeviconinverted.png"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+    />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   </head>
   <body>
     <div class="top-bar">
       <div class="logo">
         <img
-          src="Images/resized_image.png"
+          src="Images\Aptus Logo.png"
           alt="Aptus Industries Logo"
           href="/index.html"
         />
@@ -73,7 +83,7 @@
           </p>
 
           <div class="vision-mission">
-            <h3>Vision & Mission</h3>
+            <h2>Vision & Mission</h2>
             <p>
               Aptus proudly supplies a superior range of rice varieties,
               carefully sourced and processed to ensure the highest levels of
@@ -329,7 +339,15 @@
             </div>
             <div class="form-group">
               <input type="email" name="email" placeholder="Email*" required />
-              <input type="text" name="phone" placeholder="Phone*" required />
+              <input
+                id="phone"
+                type="tel"
+                name="phone"
+                placeholder="Phone*"
+                required
+                pattern="^\d{10}$"
+                maxlength="10"
+              />
             </div>
             <div class="form-group">
               <input type="text" name="company" placeholder="Company Name" />
