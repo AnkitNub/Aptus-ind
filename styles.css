@@ -25,15 +25,15 @@
 }
 .contact-info {
   display: flex;
-  gap: 40px; 
-  margin-left: 40px; 
+  gap: 40px;
+  margin-left: 40px;
 }
 
 .contact-item {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 5px; 
+  padding: 0 5px;
 }
 
 .logo {
@@ -43,7 +43,7 @@
 }
 
 .contact-icon {
-  margin-bottom: 10px; 
+  margin-bottom: 10px;
 }
 
 .contact-item img {
@@ -465,7 +465,7 @@
   max-width: 1200px;
   margin: auto;
   flex-wrap: wrap;
-  gap: 40px; 
+  gap: 40px;
   padding: 0 20px;
 }
 
@@ -490,7 +490,7 @@
 .social-icons {
   display: flex;
   flex-direction: column;
-  gap: 10px; 
+  gap: 10px;
 }
 
 .social-icons img {
@@ -641,17 +641,17 @@ html {
 }
 
 .about-image {
-  flex: 0.5; 
+  flex: 0.5;
   min-width: 200px;
   display: flex;
-  justify-content: flex-end; 
-  align-items: flex-start; 
-  margin-top: -60px; 
+  justify-content: flex-end;
+  align-items: flex-start;
+  margin-top: -60px;
   padding-top: 0;
 }
 
 .about-image img {
-  max-width: 100%; 
+  max-width: 100%;
   height: auto;
   object-fit: contain;
 }
@@ -659,16 +659,16 @@ html {
 .about-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start; 
+  align-items: flex-start;
   gap: 40px;
-  margin-top: -20px; 
+  margin-top: -20px;
 }
 
 .about-text {
-  flex: 1.5; 
+  flex: 1.5;
   min-width: 300px;
 }
-.about-text p{
+.about-text p {
   margin-left: 20px;
 }
 #contact .form-box {
@@ -727,7 +727,6 @@ html {
   background: #008a42;
 }
 
-
 #contact .mailbox {
   width: 140px;
   height: auto;
@@ -745,4 +744,18 @@ html {
 
 #contact input:focus {
   border-bottom: 2px solid #00a651;
+}
+.iti {
+  width: 50%;
+  display: block;
+}
+
+#contact .form-group .iti input {
+  width: 100%;
+  padding-left: 52px; 
+}
+
+.iti__flag-container {
+  display: flex;
+  align-items: center;
 }
