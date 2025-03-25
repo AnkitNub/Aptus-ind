@@ -470,7 +470,7 @@
 }
 
 .footer-column {
-  flex: 1;
+  flex: 0.17;
   text-align: left;
   padding-right: 30px;
 }
