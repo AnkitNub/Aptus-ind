@@ -670,6 +670,7 @@ html {
 }
 .about-text p {
   margin-left: 20px;
+  text-align: justify;
 }
 #contact .form-box {
   background: #ffffff;
@@ -752,7 +753,7 @@ html {
 
 #contact .form-group .iti input {
   width: 100%;
-  padding-left: 52px; 
+  padding-left: 52px;
 }
 
 .iti__flag-container {
