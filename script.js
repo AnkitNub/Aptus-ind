@@ -30,35 +30,6 @@ $(document).ready(function () {
     isPlaying = false;
     playButton.classList.remove('playing');
   });
-
-  // $('#contactForm').on('submit', function (event) {
-  //   event.preventDefault();
-
-  //   const submitBtn = $(this).find('.submit-btn');
-  //   const originalText = submitBtn.text();
-  //   submitBtn.text('Submitting...');
-  //   submitBtn.prop('disabled', true);
-
-  //   $.ajax({
-  //     url: '/submit',
-  //     type: 'POST',
-  //     data: $(this).serialize(),
-  //     success: function (response) {
-  //       $('#contactForm')[0].reset();
-
-  //       alert('Thank you! Your information has been submitted successfully.');
-
-  //       submitBtn.text(originalText);
-  //       submitBtn.prop('disabled', false);
-  //     },
-  //     error: function (xhr, status, error) {
-  //       alert('Error submitting form. Please try again later.');
-  //       console.error('Error details:', xhr.responseText);
-  //       submitBtn.text(originalText);
-  //       submitBtn.prop('disabled', false);
-  //     },
-  //   });
-  // });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -127,19 +98,14 @@ window.addEventListener('scroll', function () {
   document.querySelector('.scroll-progress').style.width = scrollPercent + '%';
 });
 
-// Add this to your script.js file
 document.addEventListener('DOMContentLoaded', function () {
-  // Get all form inputs
   const formInputs = document.querySelectorAll('#contactForm input');
 
-  // Add focus and blur event listeners to each input
   formInputs.forEach((input) => {
-    // When input gets focus
     input.addEventListener('focus', function () {
       this.style.borderBottom = '2px solid #00a651';
     });
 
-    // When input loses focus
     input.addEventListener('blur', function () {
       if (this.value === '') {
         this.style.borderBottom = '1px solid #ccc';
@@ -149,6 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
 const phoneInputField = document.querySelector('#phone');
 if (phoneInputField) {
   const phoneInput = window.intlTelInput(phoneInputField, {
@@ -161,25 +128,37 @@ if (phoneInputField) {
 }
 
 document.getElementById('contactForm').addEventListener('submit', function (e) {
-  e.preventDefault(); // Stop the form from submitting the traditional way
+  e.preventDefault(); // Prevent default form submission
 
   const form = e.target;
   const formData = new FormData(form);
 
+  // Get the phone input field and its country code
+  const phoneInputField = document.querySelector('#phone');
+  if (phoneInputField) {
+    const phoneInput = window.intlTelInputGlobals.getInstance(phoneInputField);
+    const countryData = phoneInput.getSelectedCountryData();
+    formData.append('countryCode', countryData.dialCode); // Append country code to form data
+  }
+
   fetch(
-    'https://script.google.com/macros/s/AKfycbyPpNQ5G3L-1U_I5KZbulaX8Dnq0Az-DO9R49BZo1dR4VbYTmwOFB_QGADSHBSerolu9A/exec',
+    'https://script.google.com/macros/s/AKfycbxLmd2c6-MaCX8WtAG2ujI4R8CdWzZrKGk4w9MD6z_9g9UZnoW2jbcWq9Y0RUG78BBSSw/exec',
     {
       method: 'POST',
       body: formData,
     }
   )
-    .then((response) => response.text())
+    .then((response) => response.json())
     .then((result) => {
-      alert('Form submitted successfully!');
-      form.reset(); // Optional: Reset form after success
+      if (result.status === 'success') {
+        alert('Form submitted successfully!');
+        form.reset(); // Reset the form after successful submission
+      } else {
+        alert('Error submitting form: ' + result.message);
+      }
     })
     .catch((error) => {
-      console.error('Error submitting form', error);
+      console.error('Error submitting form:', error);
       alert('There was an error submitting the form.');
     });
 });
