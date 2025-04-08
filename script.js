@@ -31,34 +31,34 @@ $(document).ready(function () {
     playButton.classList.remove('playing');
   });
 
-  $('#contactForm').on('submit', function (event) {
-    event.preventDefault();
+  // $('#contactForm').on('submit', function (event) {
+  //   event.preventDefault();
 
-    const submitBtn = $(this).find('.submit-btn');
-    const originalText = submitBtn.text();
-    submitBtn.text('Submitting...');
-    submitBtn.prop('disabled', true);
+  //   const submitBtn = $(this).find('.submit-btn');
+  //   const originalText = submitBtn.text();
+  //   submitBtn.text('Submitting...');
+  //   submitBtn.prop('disabled', true);
 
-    $.ajax({
-      url: '/submit',
-      type: 'POST',
-      data: $(this).serialize(),
-      success: function (response) {
-        $('#contactForm')[0].reset();
+  //   $.ajax({
+  //     url: '/submit',
+  //     type: 'POST',
+  //     data: $(this).serialize(),
+  //     success: function (response) {
+  //       $('#contactForm')[0].reset();
 
-        alert('Thank you! Your information has been submitted successfully.');
+  //       alert('Thank you! Your information has been submitted successfully.');
 
-        submitBtn.text(originalText);
-        submitBtn.prop('disabled', false);
-      },
-      error: function (xhr, status, error) {
-        alert('Error submitting form. Please try again later.');
-        console.error('Error details:', xhr.responseText);
-        submitBtn.text(originalText);
-        submitBtn.prop('disabled', false);
-      },
-    });
-  });
+  //       submitBtn.text(originalText);
+  //       submitBtn.prop('disabled', false);
+  //     },
+  //     error: function (xhr, status, error) {
+  //       alert('Error submitting form. Please try again later.');
+  //       console.error('Error details:', xhr.responseText);
+  //       submitBtn.text(originalText);
+  //       submitBtn.prop('disabled', false);
+  //     },
+  //   });
+  // });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -159,3 +159,24 @@ if (phoneInputField) {
     initialCountry: 'in',
   });
 }
+
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+  e.preventDefault(); // Stop the form from submitting the traditional way
+
+  const form = e.target;
+  const formData = new FormData(form);
+
+  fetch("https://script.google.com/macros/s/AKfycbxLmd2c6-MaCX8WtAG2ujI4R8CdWzZrKGk4w9MD6z_9g9UZnoW2jbcWq9Y0RUG78BBSSw/exec", {
+    method: "POST",
+    body: formData,
+  })
+  .then(response => response.text())
+  .then(result => {
+    alert("Form submitted successfully!");
+    form.reset(); // Optional: Reset form after success
+  })
+  .catch(error => {
+    console.error("Error submitting form", error);
+    alert("There was an error submitting the form.");
+  });
+});
