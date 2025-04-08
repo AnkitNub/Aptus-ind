@@ -312,17 +312,21 @@
       <h2>Contact Us</h2>
       <div class="form-box">
         <div class="form-fields">
-          <form id="contactForm">
+          <form
+            id="contactForm"
+            method="POST"
+            action="https://script.google.com/macros/s/AKfycbxLmd2c6-MaCX8WtAG2ujI4R8CdWzZrKGk4w9MD6z_9g9UZnoW2jbcWq9Y0RUG78BBSSw/exec"
+          >
             <div class="form-group">
               <input
                 type="text"
-                name="first_name"
+                name="fname"
                 placeholder="First Name*"
                 required
               />
               <input
                 type="text"
-                name="last_name"
+                name="lname"
                 placeholder="Last Name*"
                 required
               />
@@ -332,7 +336,7 @@
               <input
                 id="phone"
                 type="tel"
-                name="phone"
+                name="phoneNo"
                 placeholder="Phone*"
                 required
                 pattern="^\d{10}$"
@@ -340,8 +344,8 @@
               />
             </div>
             <div class="form-group">
-              <input type="text" name="company" placeholder="Company Name" />
-              <input type="text" name="job_title" placeholder="Job Title" />
+              <input type="text" name="compName" placeholder="Company Name" />
+              <input type="text" name="job" placeholder="Job Title" />
             </div>
             <div class="form-group full-width">
               <input type="text" name="subject" placeholder="Subject" />
