@@ -312,27 +312,27 @@
       <h2>Contact Us</h2>
       <div class="form-box">
         <div class="form-fields">
-          <form id="contactForm" method="POST">
+          <form id="contactForm" method="POST" name="contact-form" action="">
             <div class="form-group">
               <input
                 type="text"
-                name="fname"
+                name="first-name"
                 placeholder="First Name*"
                 required
               />
               <input
                 type="text"
-                name="lname"
+                name="last-name"
                 placeholder="Last Name*"
                 required
               />
             </div>
             <div class="form-group">
-              <input type="email" name="email" placeholder="Email*" required />
+              <input type="email" name="mail" placeholder="Email*" required />
               <input
                 id="phone"
                 type="tel"
-                name="phoneNo"
+                name="phone"
                 placeholder="Phone*"
                 required
                 pattern="^\d{10}$"
@@ -340,7 +340,7 @@
               />
             </div>
             <div class="form-group">
-              <input type="text" name="compName" placeholder="Company Name" />
+              <input type="text" name="company" placeholder="Company Name" />
               <input type="text" name="job" placeholder="Job Title" />
             </div>
             <div class="form-group full-width">
