@@ -146,9 +146,15 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     {
       method: 'POST',
       body: formData,
+      mode: 'cors', // Enable CORS
     }
   )
-    .then((response) => response.json())
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      return response.json();
+    })
     .then((result) => {
       if (result.status === 'success') {
         alert('Form submitted successfully!');
@@ -159,6 +165,6 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     })
     .catch((error) => {
       console.error('Error submitting form:', error);
-      alert('There was an error submitting the form.');
+      alert('There was an error submitting the form. Please try again later.');
     });
 });
