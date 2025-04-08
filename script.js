@@ -160,23 +160,26 @@ if (phoneInputField) {
   });
 }
 
-document.getElementById("contactForm").addEventListener("submit", function (e) {
+document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault(); // Stop the form from submitting the traditional way
 
   const form = e.target;
   const formData = new FormData(form);
 
-  fetch("https://script.google.com/macros/s/AKfycbxLmd2c6-MaCX8WtAG2ujI4R8CdWzZrKGk4w9MD6z_9g9UZnoW2jbcWq9Y0RUG78BBSSw/exec", {
-    method: "POST",
-    body: formData,
-  })
-  .then(response => response.text())
-  .then(result => {
-    alert("Form submitted successfully!");
-    form.reset(); // Optional: Reset form after success
-  })
-  .catch(error => {
-    console.error("Error submitting form", error);
-    alert("There was an error submitting the form.");
-  });
+  fetch(
+    'https://script.google.com/macros/s/AKfycbyPpNQ5G3L-1U_I5KZbulaX8Dnq0Az-DO9R49BZo1dR4VbYTmwOFB_QGADSHBSerolu9A/exec',
+    {
+      method: 'POST',
+      body: formData,
+    }
+  )
+    .then((response) => response.text())
+    .then((result) => {
+      alert('Form submitted successfully!');
+      form.reset(); // Optional: Reset form after success
+    })
+    .catch((error) => {
+      console.error('Error submitting form', error);
+      alert('There was an error submitting the form.');
+    });
 });
