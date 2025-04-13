@@ -20,9 +20,10 @@
 }
 
 .logo img {
-  height: 65px;
-  width: 85px;
+  height: 80px; /* Increased height */
+  width: 100px; /* Increased width */
 }
+
 .contact-info {
   display: flex;
   gap: 40px;
@@ -747,8 +748,8 @@ html {
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-weight: bold;
-  width: 130px;  /* Fixed width added */
-  height: 50px;  /* Fixed height added */
+  width: 130px; /* Fixed width added */
+  height: 50px; /* Fixed height added */
   margin-top: 15px;
   align-self: flex-start;
   position: relative; /* Ensures inner elements are positioned relative to the button */
@@ -803,6 +804,11 @@ html {
     text-align: center;
   }
 
+  .logo img {
+    height: 70px; /* Increased height for mobile */
+    width: 90px; /* Increased width for mobile */
+  }
+
   .contact-info {
     flex-direction: column;
     align-items: flex-start;
@@ -848,14 +854,18 @@ html {
   }
 
   .nav-links {
+    display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: flex-start;
-    gap: 15px;
+    justify-content: space-between; /* Ensure equal spacing on both ends */
+    padding: 0 10px; /* Add consistent padding */
+    margin: 0; /* Remove any margin */
+    gap: 15px; /* Maintain consistent gap between items */
   }
 
   .nav-links a {
     white-space: nowrap;
+    padding: 5px 10px; /* Adjust padding for better alignment */
   }
 
   /* Hero Section */
@@ -897,7 +907,13 @@ html {
   /* Contact Form */
   .form-box {
     flex-direction: column;
-    padding: 20px 10px;
+    padding: 20px 15px;
+    margin: 0; /* Ensure no extra margin */
+  }
+
+  .form-fields {
+    width: 100%; /* Ensure it spans the full width */
+    padding: 0; /* Remove any padding */
   }
 
   .form-group {
@@ -1087,8 +1103,8 @@ html {
   }
 
   .logo img {
-    height: 50px;
-    width: 65px;
+    height: 85px; /* Increased height for mobile */
+    width: 100px; /* Increased width for mobile */
   }
 
   .contact-info {
@@ -1126,8 +1142,9 @@ html {
   .nav-links {
     flex-wrap: nowrap;
     overflow-x: auto;
-    justify-content: flex-start;
-    gap: 15px;
+    justify-content: space-between; /* Ensure equal spacing on both ends */
+    padding: 0 10px; /* Add consistent padding */
+    gap: 15px; /* Maintain consistent gap between items */
   }
 
   .nav-links li {
@@ -1253,6 +1270,12 @@ html {
   #contact .form-box {
     flex-direction: column;
     padding: 20px 15px;
+    margin: 0; /* Ensure no extra margin */
+  }
+
+  #contact .form-fields {
+    width: 100%; /* Ensure it spans the full width */
+    padding: 0; /* Remove any padding */
   }
 
   #contact .form-group {
