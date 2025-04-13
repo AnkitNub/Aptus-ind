@@ -160,15 +160,23 @@ if (phoneInputField) {
   });
 
   const scriptURL =
-    'https://script.google.com/macros/s/AKfycbyl2vJEVle6Hs-z6Ei13VWXdFN_Ig7y6iVS2V5wl-q1eLC02PT74Z1iSlxLq7BHsrTT5w/exec';
+    'https://script.google.com/macros/s/AKfycbzoeBvJdBqJtZ9CO_iX3gsR7qapqwGVY103U5a1lhX2GGJQYMFVo03XjKaWPGYqf7ye/exec';
 
   const form = document.forms['contact-form'];
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
-      .then((response) => alert('Thank you! Form is submitted'))
+    fetch(scriptURL, 
+      { 
+        method: 'POST', 
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: new FormData(form)
+      })
+      .then((response) => alert('Thank you! We will contact you shortly.'))
       .then(() => {
         window.location.reload();
       })
