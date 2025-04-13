@@ -434,15 +434,43 @@
   width: 100%;
 }
 .submit-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  padding: 12px 20px;
+  width: 150px; /* Fixed width */
+  height: 50px; /* Fixed height */
   background: green;
   color: white;
   border: none;
-  padding: 12px 20px;
-  cursor: pointer;
   border-radius: 5px;
-  font-size: 16px;
-  width: 100%;
+  cursor: pointer;
+  overflow: hidden; /* Ensures spinner stays inside the button */
+  text-transform: uppercase;
+  font-weight: bold;
 }
+
+.spinner {
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: none; /* Hidden by default */
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 .submit-btn:hover {
   background: darkgreen;
 }
@@ -719,9 +747,12 @@ html {
   transition: all 0.3s ease;
   text-transform: uppercase;
   font-weight: bold;
-  width: auto;
+  width: 130px;  /* Fixed width added */
+  height: 50px;  /* Fixed height added */
   margin-top: 15px;
   align-self: flex-start;
+  position: relative; /* Ensures inner elements are positioned relative to the button */
+  overflow: hidden;
 }
 
 #contact .submit-btn:hover {

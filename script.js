@@ -167,19 +167,33 @@ if (phoneInputField) {
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    fetch(scriptURL, 
-      { 
-        method: 'POST', 
-        mode: 'no-cors',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: new FormData(form)
+    const submitBtn = document.querySelector('.submit-btn');
+    const btnText = submitBtn.querySelector('.btn-text');
+    const spinner = submitBtn.querySelector('.spinner');
+
+    // Show spinner and hide text
+    btnText.style.display = 'none';
+    spinner.style.display = 'block';
+    submitBtn.disabled = true;
+
+    fetch(scriptURL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: new FormData(form),
+    })
+      .then((response) => {
+        alert('Thank you! We will contact you shortly.');
+        form.reset();
       })
-      .then((response) => alert('Thank you! We will contact you shortly.'))
-      .then(() => {
-        window.location.reload();
-      })
-      .catch((error) => console.error('Error!', error.message));
+      .catch((error) => console.error('Error!', error.message))
+      .finally(() => {
+        // Hide spinner and show text
+        btnText.style.display = 'block';
+        spinner.style.display = 'none';
+        submitBtn.disabled = false;
+      });
   });
 }
