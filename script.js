@@ -1,64 +1,10 @@
 $(document).ready(function () {
   const video = document.getElementById('hero-video');
-  const playButton = document.getElementById('video-toggle');
-  let isPlaying = false;
-
   window.addEventListener('load', function () {
     video.play().catch((error) => {
       console.log('Auto-play was prevented. User interaction required.');
     });
   });
-
-  playButton.addEventListener('click', function () {
-    if (isPlaying) {
-      video.pause();
-      playButton.classList.remove('playing');
-    } else {
-      video.play();
-      video.muted = false;
-      playButton.classList.add('playing');
-    }
-    isPlaying = !isPlaying;
-  });
-
-  video.addEventListener('play', function () {
-    isPlaying = true;
-    playButton.classList.add('playing');
-  });
-
-  video.addEventListener('pause', function () {
-    isPlaying = false;
-    playButton.classList.remove('playing');
-  });
-
-  // $('#contactForm').on('submit', function (event) {
-  //   event.preventDefault();
-
-  //   const submitBtn = $(this).find('.submit-btn');
-  //   const originalText = submitBtn.text();
-  //   submitBtn.text('Submitting...');
-  //   submitBtn.prop('disabled', true);
-
-  //   $.ajax({
-  //     url: '/submit',
-  //     type: 'POST',
-  //     data: $(this).serialize(),
-  //     success: function (response) {
-  //       $('#contactForm')[0].reset();
-
-  //       alert('Thank you! Your information has been submitted successfully.');
-
-  //       submitBtn.text(originalText);
-  //       submitBtn.prop('disabled', false);
-  //     },
-  //     error: function (xhr, status, error) {
-  //       alert('Error submitting form. Please try again later.');
-  //       console.error('Error details:', xhr.responseText);
-  //       submitBtn.text(originalText);
-  //       submitBtn.prop('disabled', false);
-  //     },
-  //   });
-  // });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
